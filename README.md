@@ -70,7 +70,7 @@ A bash script 'netsim' has been provided to apply network simmulation. If you wa
 
 ###	Create the ion network
 ```bash
-docker network create --subnet=172.0.0.0/24 ionnet
+docker network create --subnet=172.29.0.0/24 ionnet
 ```
 
 ### Stop and delete any previous containers if needed
@@ -89,7 +89,7 @@ docker run \
 -v "$(pwd)/configs":/mnt/dtnconfig \
 --cap-add=NET_ADMIN \
 --net ionnet \
---ip 172.0.0.2 --name ion-rx \
+--ip 172.29.0.2 --name ion-rx \
 gamecat69/ion:latest
 ```
 
@@ -103,7 +103,7 @@ docker run \
 -v "$(pwd)/configs":/mnt/dtnconfig \
 --cap-add=NET_ADMIN \
 --net ionnet \
---ip 172.0.0.3 --name ion-tx \
+--ip 172.29.0.3 --name ion-tx \
 gamecat69/ion:latest
 ```
 #	Viewing test results
@@ -139,7 +139,7 @@ docker run \
 -v "$(pwd)/configs":/mnt/dtnconfig \
 --cap-add=NET_ADMIN \
 --net ionnet \
---ip 172.0.0.2 --name ion-rx \
+--ip 172.29.0.2 --name ion-rx \
 gamecat69/ion:latest
 ```
 
