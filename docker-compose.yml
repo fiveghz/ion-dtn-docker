@@ -1,0 +1,24 @@
+version: '3'
+services:
+  ion-rx:
+    image: gamecat69/ion
+    working_dir: /mnt/dtnconfig
+    volumes:
+      - /Docker/ion/configs/ion-ltp-rx:/mnt/dtnconfig
+    networks:
+      ionnet:
+        ipv4_address: 172.29.0.2
+  ion-tx:
+    image: gamecat69/ion
+    working_dir: /mnt/dtnconfig
+    volumes:
+      - /Docker/ion/configs/ion-ltp-tx:/mnt/dtnconfig
+    networks:
+      ionnet:
+        ipv4_address: 172.29.0.3
+networks:
+  ionnet:
+    ipam:
+      driver: default
+      config:
+         - subnet: 172.29.0.0/24
